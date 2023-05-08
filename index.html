@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/e62269ec91.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1 class="name"><span style="color: red;">B</span>haratesh.</h1>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i id="fas" class="fa-sharp fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i id="fas" class="fa-solid fa-bars-staggered" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Hello World</p>
+                <h1>Hi, I'm <span style ="color: greenyellow;">Bharatesh</span><br>From India</h1>
+            </div>
+        </div>
+    </div>
+<!-----------------about--------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/about.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub">About me</h1>
+                    <p align="justify" class="para">Hello everyone, I'm Bharatesh, a Computer Science Engineer
+                        from SDM College of Engg & Tech, Dharwad. I have honed my skills in prgramming languages like C, Python and other curricular activities like arts, Crafts and Photography.
+                        I am passionate about working with creative ideas and smart working, and I always strive to exceed my clients' expectations.
+                        In my free time, I enjoy watching movies & Webseries and playing cricket.                            
+                    </p>
+               
+                    <div class="tab">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web development</span><br>Web application development.</li>
+                            <li><span>Crazy arts & Crafts</span><br>Making beautiful crafts with wastes.</li>
+                            <li><span>Photography</span><br>capture anything you feel is important to remember.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2020-2024</span><br>Computer Science Engineering at SDMCET,Dharwad.</li>
+                            <li><span>2018-2020</span><br>PUC at SMPU college Dharwad.</li>
+                            <li><span>2008-2018</span><br>1st to SSLC at K.E.Board's school Dharwad.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------------services------------------->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub">My Services</h1>
+            <div class="service-list">
+                <div>
+                    <i class="fa-sharp fa-solid fa-democrat"></i>
+                    <h2>Crazy arts & Crafts</h2>
+                    <p> an activity that involves making something in a skillful way by using your hands.</p>
+                    <a href="crafts.html">Click to See</a>
+                </div>
+                <div>
+                    <i class="fa-sharp fa-regular fa-images"></i>
+                    <h2>Photography</h2>
+                    <p> One photograph is powerful enough to not only remind you of an event or detail, but can bring you right back to the feelings, sounds, and even smells of the moment.</p>
+                    <a href="photography.html">Click to See</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!------------portfolio--------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work1.jpg" >
+            </div>
+            <div class="work">
+                <img src="images/work2.jpg" >
+            </div>
+            <div class="work">
+                <img src="images/work3.jpg" >
+            </div>
+        </div>
+        <a href="photography.html" class="btn btn2">Load more</a>
+    </div>
+</div>
+
+<!--------contact----------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub">Contact Me</h1>
+                <p><i class="fa-sharp fa-solid fa-paper-plane"></i>  bharatlabhagond09@gmail.com</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/bharateshnl"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/bharatesh-labhagond-232bbb220"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+
+                <a href="D:\Portfolio\My_resume.pdf" download class="btn btn2">Download CV</a>
+
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn1">Submit</button>
+                </form>
+                <span id = "msg"></span>
+            </div>
+        </div>
+       
+    </div>
+    <div class="copyright">
+        <p>Made with <i>❤</i> </p>
+        <p>Copyright © 2023 Bharatesh Labhagond</p>
+    </div>
+</div>
+
+
+
+
+    <script>
+        
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link")
+            }
+
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
+
+    <script>
+
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+
+        }
+
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+            
+        }
+
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzw7Z8klasBuazM4atn-Z1k5JiINJpSJeciYFzE4ihYVqvOTJmoyNfC4HroAS_hK_FJRg/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully👍"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
